@@ -1,0 +1,71 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+.container{
+    height:100%;
+    max-width:1200px;
+    margin:0 auto; 
+    padding:20px;
+}
+.container h1{
+      margin:20px 0; /*20PX REPRESENTS TOP AND BOTTOM MARGIN AND 0 REPRESENTS RIGHT AND LEFT MARGIN*/
+      text-align:center;
+      margin-bottom:20px;
+      font-size:3rem;
+}
+.gallery{
+    display:flex;
+    flex-wrap: wrap;/*NOT IN SAME HORIZONTAL LINE*/
+    justify-content:space-between;
+
+}
+.card{
+    width: 32%;
+    position:relative;   /*POSITION IS RELATIVE BCOX WE WANT TO DO OVERLAPPING OF TEXT ON IMAGE. AND THE ANCESTER OF IMAGE IS CARD .SO CARD POSITION SHOULD BE REALTIVE*/
+     margin-bottom:20px;
+    border-radius:10px; /*FOR THE ROUND BORDER OF THE CARD */
+    overflow:hidden; /*if there is any overflow of image then to hide it and adjust it */
+}
+.card img{
+    width:100%;/* MEANS IMG KI WIDTH USKE PARENT KE WIDTH KI JITNI HO*/
+    filter:grayscale(100%); /* TO PUT THE FILTER OF BLACK AND WHITE*/
+    height:100%; /* IMAGES KI BOTTOM BECOMES ROUND*/
+    box-shadow: 0 0 20px #333;
+}
+.card:hover {
+    transform:scale(1.03);
+    transition:0.5s;
+    filter:drop-shadow(0 0 10px #333);
+}
+.card:hover img{
+    filter:grayscale(0%); /*WHEN HOVER OVER IMAGE COLOR OF IMAGE OCCURS*/
+
+}
+.card figcaption{
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding:25px;
+    width:100%;
+   height:20%;
+   font-size:16px;
+   font-weight:500;
+   color:#fff;
+   opacity:0;/*Text will not appear*/
+   border-radius:0 0 10px 10px;
+   background:linear-gradient(0deg,rgba(0,0,0,0.5)0%, rgba(255,255,255,0)100%);
+  transition:0.3s;
+
+}
+.card:hover figcaption{
+    opacity:1;
+    transform:scale(1.03);
+}
